@@ -6,14 +6,13 @@ const app = express()
 app.use(
     cors()
 );
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://paperbrock.vercel.app/');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-        // Add other CORS headers as needed
-    next();
-  });
+app.options('/api/v1/beta/register', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://paperbrock.vercel.app/');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.status(200).end();
+});
+
 
 app.use(express.json({
     limit: '16kb'
