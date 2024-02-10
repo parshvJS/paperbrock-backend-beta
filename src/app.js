@@ -3,6 +3,7 @@ import cors from 'cors'
 import { whitelist } from './constants.js'
 const app = express()
 
+app.use(corsMiddleware('https://paperbrock.vercel.app'));
 app.use(
     cors({
         origin: ["https://paperbrock.vercel.app", "http://localhost:5173"],
