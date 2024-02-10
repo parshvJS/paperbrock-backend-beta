@@ -5,7 +5,12 @@ const app = express()
 
 app.use(
     cors()
-)
+);
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://paperbrock.vercel.app/');
+    // Add other CORS headers as needed
+    next();
+  });
 
 app.use(express.json({
     limit: '16kb'
