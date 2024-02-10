@@ -5,9 +5,9 @@ const app = express()
 
 app.use(
  cors({
-    origin:"https://paperbrock.vercel.app",
+    origin:["https://paperbrock.vercel.app","http://localhost:5173"],
     methods:["GET","POST"],
-    
+
     credentials: true
  })
 )
