@@ -7,7 +7,7 @@ app.use(
     cors()
 );
 app.options('/api/v1/beta/register', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://paperbrock.vercel.app/');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.status(200).end();
