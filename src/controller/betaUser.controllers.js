@@ -5,6 +5,10 @@ import asyncHandler from '../utils/asyncHandler.utils.js'
 
 const betaRegister = asyncHandler(
     async (req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+        res.setHeader('Access-Control-Allow-Credentials', true);
         const { email } = req.body
         if (!email) throw new apiError(400, "Please Enter Email Here !")
         const isExisting = await User.findOne({ email })
