@@ -1,8 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-
+import { whitelist } from './constants.js'
 const app = express()
-const whitelist = ['http://localhost:3000', 'http://localhost:5173', 'http://localhost:8000'];
 
 app.use(
     cors({
