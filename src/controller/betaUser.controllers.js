@@ -6,7 +6,6 @@ import asyncHandler from '../utils/asyncHandler.utils.js'
 const betaRegister = asyncHandler(
     async (req, res) => {
         const { email } = req.body
-
         if (!email) throw new apiError(400, "Please Enter Email Here !")
         const isExisting = await User.findOne({ email })
         if (!isExisting) {
