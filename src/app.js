@@ -4,9 +4,10 @@ import { whitelist } from './constants.js'
 const app = express()
 
 app.use(
-    cors({
-        origin:whitelist
-    })
+ cors({
+    origin:whitelist,
+    credentials: true
+ })
 )
 
 app.use(express.json({
